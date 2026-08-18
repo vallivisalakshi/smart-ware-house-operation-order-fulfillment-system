@@ -6,6 +6,7 @@ import {
   BarChart,
   CartesianGrid,
   Cell,
+  ComposedChart,
   Line,
   LineChart,
   Pie,
@@ -187,18 +188,25 @@ function AnalyticsPage() {
           <SectionHead title="Days of cover vs. lead time" desc="Bars below the lead line will stock out." />
           <div className="h-56">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={coverData}>
+              <ComposedChart data={coverData}>
                 <CartesianGrid stroke="var(--grid-line)" vertical={false} />
                 <XAxis dataKey="name" tick={AXIS} tickLine={false} axisLine={false} />
                 <YAxis tick={AXIS} tickLine={false} axisLine={false} />
                 <Tooltip contentStyle={tooltipStyle} />
-                <Bar dataKey="cover" radius={[4, 4, 0, 0]}>
+                <Bar dataKey="cover" name="days of cover" radius={[4, 4, 0, 0]}>
                   {coverData.map((d, i) => (
                     <Cell key={i} fill={d.cover < d.lead ? "var(--chart-4)" : "var(--chart-3)"} />
                   ))}
                 </Bar>
-                <Line dataKey="lead" stroke="var(--chart-1)" strokeWidth={2} dot={false} />
-              </BarChart>
+                <Line
+                  dataKey="lead"
+                  name="lead time (d)"
+                  stroke="var(--chart-1)"
+                  strokeWidth={2}
+                  strokeDasharray="4 4"
+                  dot={false}
+                />
+              </ComposedChart>
             </ResponsiveContainer>
           </div>
         </div>
