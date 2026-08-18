@@ -13,7 +13,7 @@ export const SKUS: Sku[] = [
   { id: "SKU-3002", name: "Safety Vest Hi-Vis", category: "PPE", zone: "C", bin: "C-03-4", onHand: 140, reserved: 95, reorderPoint: 120, reorderQty: 200, leadTimeDays: 7, unitCost: 14, damaged: 4, velocity: 18 },
   { id: "SKU-3003", name: "Steel Toe Boots 42", category: "PPE", zone: "C", bin: "C-03-7", onHand: 26, reserved: 24, reorderPoint: 30, reorderQty: 60, leadTimeDays: 14, unitCost: 88, damaged: 3, velocity: 5.2 },
   { id: "SKU-4001", name: "Shelf Bracket Kit", category: "Fixtures", zone: "D", bin: "D-05-2", onHand: 310, reserved: 60, reorderPoint: 150, reorderQty: 300, leadTimeDays: 9, unitCost: 34, damaged: 0, velocity: 22 },
-  { id: "SKU-4002", name: "Conveyor Roller 600mm", category: "Fixtures", zone: "D", bin: "D-06-1", onHand: 82, reserved: 74, reorderPoint: 60, reorderQty: 120, leadTimeDays: 16, unitCost: 57, domainless: undefined as never, damaged: 6, velocity: 9 } as unknown as Sku,
+  { id: "SKU-4002", name: "Conveyor Roller 600mm", category: "Fixtures", zone: "D", bin: "D-06-1", onHand: 82, reserved: 74, reorderPoint: 60, reorderQty: 120, leadTimeDays: 16, unitCost: 57, damaged: 6, velocity: 9 },
   { id: "SKU-5001", name: "Cold Chain Gel Pack", category: "Cold Chain", zone: "E", bin: "E-01-2", onHand: 2400, reserved: 900, reorderPoint: 1000, reorderQty: 2000, leadTimeDays: 6, unitCost: 2.4, damaged: 40, velocity: 320 },
   { id: "SKU-5002", name: "Insulated Shipper 30L", category: "Cold Chain", zone: "E", bin: "E-02-1", onHand: 96, reserved: 88, reorderPoint: 90, reorderQty: 150, leadTimeDays: 11, unitCost: 43, damaged: 5, velocity: 14 },
 ];
