@@ -114,7 +114,7 @@ export function WarehouseProvider({ children }: { children: ReactNode }) {
         const next = NEXT[o.stage];
         if (!next) return o;
         if (next === "dispatched") {
-          const carrier = CARRIERS[Math.floor(Math.random() * CARRIERS.length)];
+          const carrier = CARRIERS[Math.floor(Math.random() * CARRIERS.length)] ?? "Meridian Freight";
           const shp: Shipment = {
             id: `SHP-${7700 + Math.floor(Math.random() * 900)}`,
             orderId: o.id,
@@ -151,7 +151,7 @@ export function WarehouseProvider({ children }: { children: ReactNode }) {
   const reportException = useCallback<WarehouseState["reportException"]>((input) => {
     const rec: ExceptionRecord = {
       id: `EX-${3300 + Math.floor(Math.random() * 700)}`,
-      orderId: input.orderId,
+      ...(input.orderId ? { orderId: input.orderId } : {}),
       skuId: input.skuId,
       type: input.type,
       qty: input.qty,
